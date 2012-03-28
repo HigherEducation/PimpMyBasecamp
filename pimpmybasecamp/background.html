@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Background operations for Pimp My Basecamp</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="/js/jquery.min.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //this adds the image to the address bar
+            chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+                if(tab.url.indexOf('basecamp.com/') != -1) {
+                    chrome.pageAction.setIcon({"tabId":tab.id, path:"images/red19.png"});
+                    chrome.pageAction.setTitle({"tabId":tab.id, title:"Pimping your Basecamp!" + "\n" + tab.url});
+                    chrome.pageAction.show(tab.id);
+                } else {
+                    chrome.pageAction.hide(tab.id);
+                }
+            });
+        </script>
+    </body>
+</html>

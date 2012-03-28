@@ -1,0 +1,28 @@
+{
+	"name": "Pimp My Basecamp",
+	"version": "0.0.1",
+	"permissions": [
+		"tabs",
+		"*://basecamp.com/*",
+		"*://*/*"
+	],
+	"content_scripts": [
+		{
+		  "matches": ["*://basecamp.com/*"],
+		  "css": ["recipes/all.css", "bootstrap.css"],
+		  "js": ["recipes/all.js", "js/jquery.min.js", "bootstrap.js"],
+		  "run_at": "document_start"
+		}
+	],
+	"icons": { "128": "images/pimp128.png",
+               "48" : "images/pimp48.png",
+			   "16" : "images/pimp19.png" },
+	"page_action":
+	{
+		"default_icon": "images/lime19.png",
+		"default_title": "Pimping your Basecamp!",
+		"default_popup": "popup.html"
+	},
+	"options_page": "options.html",
+	"background_page": "background.html"
+}

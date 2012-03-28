@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Pimp My Basecamp!</title>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<link rel="stylesheet" href="/css/main.css" />
+	</head>
+
+	<body>
+		<div class="popup"></div>
+		<div>
+			<script>
+			$('.popup').html('Popup!');
+			chrome.extension.isAllowedFileSchemeAccess(function() { console.log("We have access to the file scheme!"); });
+			</script>
+			<div>Because Basecamp runs using ssl, any outside resources that are to hook into Basecamp should also run ssl or the user will need to allow the loading of insecure items.</div>
+			<iframe frameborder=0 width=100% height=90% src="http://dl.dropbox.com/u/15187398/pmb/remote_popup.html" />
+			<button>Turn this crap off!</button>
+		</div>
+	</body>
+</html>
